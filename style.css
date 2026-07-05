@@ -1,0 +1,2735 @@
+/* Root */
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: "Hind Siliguri", sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(22, 18, 18);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(219, 25, 51, 0.25);
+    border-radius: 999px;
+
+    transition: 1s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(219, 25, 51, 0.75);
+}
+
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+    animation: FadeOut 0.3s ease-in forwards;
+}
+
+::view-transition-new(root) {
+    animation: FadeIn 0.3s ease-out forwards;
+    animation-delay: 0.3s;
+    animation-fill-mode: both;
+}
+
+@keyframes FadeOut {
+    from {
+        opacity: 1;
+        filter: brightness(1);
+    }
+
+    to {
+        opacity: 1;
+        filter: brightness(0);
+    }
+}
+
+@keyframes FadeIn {
+    from {
+        opacity: 0;
+        filter: brightness(0);
+    }
+
+    to {
+        opacity: 1;
+        filter: brightness(1);
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 160px;
+    line-height: 140px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    user-select: none;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 400;
+    color: rgb(253, 234, 234);
+
+    user-select: none;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: rgb(253, 234, 234);
+
+    user-select: none;
+}
+
+img {
+    user-select: none;
+    pointer-events: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    background-color: rgb(22, 18, 18);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+#BackGroundFade {
+    background: linear-gradient(0deg, rgb(7, 7, 7) 0%, rgb(15, 13, 13) 50%, rgb(22, 18, 18) 100%);
+    background-repeat: no-repeat;
+}
+
+@keyframes FadeInAnimation {
+    to {
+        transform: translateY(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+header {
+    height: 18vh;
+    width: 100%;
+    padding: 0 10vh;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    pointer-events: none;
+}
+
+header>div {
+    height: 12vh;
+    width: 100%;
+    min-width: fit-content;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5vh 2.5vw;
+
+    background-color: rgb(22, 18, 18, 50%);
+    border-radius: 6vh;
+
+    box-shadow: 1px 1px 1px 0px rgba(255, 255, 255, 0.5) inset, -0.5px -0.5px 0.5px 0px rgba(255, 255, 255, 0.25) inset;
+    backdrop-filter: blur(15px) grayscale(50%) brightness(50%);
+
+    pointer-events: all;
+
+    animation: HeaderAnimation 2.5s forwards;
+}
+
+header #Logo {
+    height: 4vh;
+    width: 10.2vh;
+}
+
+header #Logo svg {
+    height: 5vh;
+    width: 10.2vh;
+}
+
+header nav {
+    width: 100%;
+
+    display: flex;
+    gap: 1.25vw;
+    align-items: center;
+    justify-content: end;
+
+    animation: HeaderNavAnimation 2.5s forwards;
+}
+
+header nav a {
+    text-decoration: none;
+}
+
+header nav h3 {
+    font-size: 20px;
+    font-weight: normal;
+    color: rgb(253, 234, 234);
+    white-space: nowrap;
+
+    padding: 0 0.5vh;
+    padding-bottom: 1px;
+    border-bottom: 1px solid transparent;
+    margin-bottom: 1px;
+
+    transition: 1s;
+}
+
+header nav a h3#CurrentPage {
+    font-weight: bold;
+    border-bottom: 3px solid rgb(253, 234, 234);
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+header nav a h3:hover {
+    border-bottom: 1px solid rgba(210, 195, 195, 50%);
+}
+
+header nav button {
+    background: linear-gradient(45deg, rgb(158, 148, 148) 0%, rgb(210, 195, 195) 75%, rgb(253, 234, 234) 100%);
+    border: none;
+    display: flex;
+    gap: 0.5vw;
+    align-items: center;
+    padding: 1vh 1.75vw;
+    border-radius: 5vh;
+}
+
+header nav button svg {
+    height: 3vh;
+    width: 3.3vh;
+}
+
+header nav button h3 {
+    font-size: 24px;
+    font-weight: lighter;
+    color: rgb(15, 13, 13);
+}
+
+header nav button#SeeYourCreateAccount {
+    background: none;
+    border: 1px solid rgb(253, 234, 234);
+}
+
+header nav button#SeeYourCreateAccount h3 {
+    color: rgb(253, 234, 234);
+}
+
+@keyframes HeaderAnimation {
+    0% {
+        width: fit-content;
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    20% {
+        width: 12vh;
+        opacity: 1;
+    }
+
+    60% {}
+}
+
+@keyframes HeaderNavAnimation {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+
+    60% {
+        width: 0;
+        opacity: 0;
+    }
+
+    100% {}
+}
+
+footer {
+    box-shadow: -50px 0px 100px 125px rgba(7, 7, 7, 1);
+    position: relative;
+    z-index: 11;
+}
+
+footer #AboutUsFooter {
+    width: 100%;
+    padding: 7.5vh 7.5vw 10vh 7.5vw;
+
+    background-color: rgb(7, 7, 7);
+
+    display: grid;
+    grid-template-columns: repeat(2, calc(100% / 3));
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer #AboutUsFooter h2 {
+    font-size: 24px;
+    line-height: 24px;
+}
+
+footer #PagesFooter {
+    padding: 10vh 5vw;
+
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(2, auto);
+    justify-content: space-between;
+    grid-row-gap: 5vh;
+
+    background-color: rgb(210, 195, 195);
+}
+
+footer #PagesFooter div {
+    height: fit-content;
+    width: fit-content;
+}
+
+footer #PagesFooter div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+footer #PagesFooter div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+footer #PagesFooter div:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+footer #PagesFooter div:nth-child(4) {
+    display: flex;
+    flex-direction: column;
+
+    grid-area: 1 / 4 / 2 / 5;
+}
+
+footer #PagesFooter div:nth-child(5) {
+    display: flex;
+    flex-direction: column;
+
+    grid-area: 1 / 5 / 2 / 6;
+}
+
+footer #PagesFooter div:nth-child(6) {
+    grid-area: 2 / 1 / 3 / 6;
+}
+
+footer #PagesFooter div:nth-child(6) a {
+    color: rgb(15, 13, 13);
+}
+
+footer #PagesFooter h1 {
+    height: fit-content;
+    width: fit-content;
+
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 32px;
+
+    text-transform: capitalize;
+
+    color: rgb(15, 13, 13);
+}
+
+footer #PagesFooter a {
+    height: fit-content;
+    width: fit-content;
+}
+
+footer #PagesFooter h2 {
+    height: fit-content;
+    width: fit-content;
+
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 30px;
+
+    color: rgb(22, 18, 18);
+}
+
+footer #PagesFooter h2 span {
+    height: fit-content;
+    width: fit-content;
+
+    font-size: 50%;
+    font-weight: normal;
+    line-height: 24px;
+
+    color: rgb(22, 18, 18);
+
+    vertical-align: top;
+}
+
+
+/* -------------------------------------------------------------------------------*/
+/* Home */
+
+#Home {
+    position: relative;
+}
+
+
+/* - Banner */
+
+#Home section#Banner>div#BackImg {
+    opacity: 15%;
+    position: absolute;
+    top: 18vh;
+    z-index: -1;
+    width: 100%;
+}
+
+#Home section#Banner>div#BackImg img:first-child {
+    height: 125vh;
+    transform: scaleX(-1);
+    position: absolute;
+    top: 3vh;
+    right: 67.5vw;
+}
+
+#Home section#Banner>div#BackImg img:last-child {
+    height: 125vh;
+    position: absolute;
+    top: -10vh;
+    left: 65vw;
+}
+
+#Home section#Banner>div#Description {
+    height: 90vh;
+
+    color: white;
+
+    margin: 0 7.5vw 10vh 7.5vw;
+
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    align-items: center;
+}
+
+#Home section#Banner>div#Description>div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 7.5vh;
+
+    width: 75vh;
+}
+
+#Home section#Banner>div#Description>div:first-child h1 {
+    color: rgb(105, 162, 48);
+}
+
+#Home section#Banner>div#Description>div:first-child button {
+    width: fit-content;
+    height: fit-content;
+
+    padding: 2.5vh 2.5vw;
+
+    border-radius: 5vh;
+    border: none;
+
+    line-height: 12px;
+
+    background: linear-gradient(45deg, rgb(109, 8, 21) 0%, rgb(219, 25, 51) 75%, rgb(250, 58, 83) 100%);
+}
+
+#Home section#Banner>div#Description>div:last-child img {
+    transform: rotate(15);
+}
+
+
+/* - Nutrition Information */
+
+#Home section#NutritionInformation {
+    display: grid;
+    grid-template-columns: 31.25vw 32.5vw;
+    justify-content: space-between;
+
+    height: 96vh;
+    width: 100%;
+    padding: 0 5vh 5vh 5vh;
+}
+
+#Home section#NutritionInformation figure {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) rotate(200deg) scaleY(-1) scale(1.15);
+}
+
+#Home section#NutritionInformation figure img {
+    width: 30.75vw;
+}
+
+#Home section#NutritionInformation #Description {
+    padding: 5vh;
+    display: flex;
+    flex-direction: column;
+    gap: 7.5vh;
+}
+
+#Home section#NutritionInformation #Description h1 {
+    color: rgb(219, 25, 51);
+}
+
+#Home section#NutritionInformation #Description button {
+    width: fit-content;
+    height: fit-content;
+
+    padding: 2.5vh 2.5vw;
+
+    border-radius: 5vh;
+    border: none;
+
+    line-height: 12px;
+
+    background: linear-gradient(45deg, rgb(84, 112, 41) 0%, rgb(105, 162, 48) 75%, rgb(130, 206, 72) 100%);
+}
+
+#Home section#NutritionInformation #Information {
+    background: linear-gradient(45deg, rgb(84, 112, 41) 0%, rgb(105, 162, 48) 75%, rgb(130, 206, 72) 100%);
+
+    padding: 7.5vh;
+    padding-left: 7.5vmin;
+    border-radius: 7.5vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10vh;
+
+    color: rgb(253, 234, 234);
+}
+
+#Home section#NutritionInformation #Information div {
+    width: 17.5vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1vh;
+
+    padding-bottom: 1vh;
+    border-bottom: 1px solid rgb(253, 234, 234);
+}
+
+#Home section#NutritionInformation #Information h1 {
+    font-size: 64px;
+    line-height: 64px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+#Home section#NutritionInformation #Information h2 {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: lighter;
+}
+
+
+/* - More Flavors */
+
+#Home section#MoreFlavors {
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    padding: 5vh 5vw;
+}
+
+#Home section#MoreFlavors #Flavors {
+    height: 60vh;
+    width: 100%;
+    position: relative;
+}
+
+#Home section#MoreFlavors figure {
+    display: flex;
+    align-items: end;
+
+    height: 60vh;
+    width: 20vw;
+
+    min-width: 300px;
+    max-width: 450px;
+
+    overflow: hidden;
+
+    position: absolute;
+
+    border-radius: 5vh;
+
+    transition: transform 0.5s ease;
+}
+
+#Home section#MoreFlavors figure .CreateAccount {
+    display: flex;
+    align-items: end;
+
+    height: 57.5vh;
+    width: 100%;
+
+    border-radius: 0 5vh 0 0;
+    background: linear-gradient(0deg, rgb(7, 7, 7) 0%, rgb(15, 13, 13) 50%, rgb(22, 18, 18) 100%);
+    box-shadow: -2px 2px 20px 1px rgba(255, 255, 255, 0.25) inset, 1px -1px 5px 1px rgba(255, 255, 255, 0.1) inset, 0px 0px 50px 0px rgba(7, 7, 7, 25%);
+}
+
+#Home section#MoreFlavors img {
+    width: 30vw;
+    min-width: 350px;
+    max-width: 550px;
+
+
+    position: absolute;
+    top: -2vh;
+    left: -12.5vw;
+
+    transform: scaleX(-1) rotate(15deg) scale(1.2);
+}
+
+#Home section#MoreFlavors figure .Description {
+    height: 20vh;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    padding: 2.5vh;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vh;
+    justify-content: center;
+
+    background-color: rgba(253, 234, 234, 25%);
+    backdrop-filter: blur(5px);
+}
+
+#Home section#MoreFlavors h1 {
+    font-size: 40px;
+    line-height: 32px;
+    font-weight: 500;
+
+    color: rgb(253, 234, 234);
+    text-transform: capitalize;
+
+    position: relative;
+    z-index: 5;
+}
+
+#Home section#MoreFlavors figure .Description button {
+    width: fit-content;
+    height: fit-content;
+
+    padding: 1.5vh 1vw;
+
+    border-radius: 5vh;
+    border: none;
+
+    line-height: 12px;
+
+    background: linear-gradient(45deg, rgb(84, 112, 41) 0%, rgb(105, 162, 48) 75%, rgb(130, 206, 72) 100%);
+
+    position: relative;
+    z-index: 5;
+}
+
+#Home section#MoreFlavors figure .Description h3 {
+    font-size: 30px;
+    font-weight: 300;
+
+    color: rgb(253, 234, 234);
+    text-transform: capitalize;
+}
+
+#Home section#MoreFlavors figure::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60vh;
+    width: 20vw;
+    min-width: 300px;
+    max-width: 450px;
+    z-index: 3;
+
+    background: linear-gradient(0deg, rgba(7, 7, 7, 1) 0%, rgba(15, 13, 13, 25%) 20%, rgba(22, 18, 18, 0) 50%);
+    opacity: 0.75;
+}
+
+#Home section#MoreFlavors figure:nth-child(1) {
+    transform: rotate(-15deg) translate(-10%, -7.5%);
+    z-index: 6;
+    top: 15vh;
+    left: 10%;
+    filter: blur(1px);
+}
+
+#Home section#MoreFlavors figure:nth-child(2) {
+    transform: rotate(-10deg) translate(-10%, -3%);
+    z-index: 7;
+    left: 25%;
+    top: 5vh;
+    filter: blur(0.5px);
+}
+
+#Home section#MoreFlavors figure:nth-child(3) {
+    transform: rotate(0deg) translate(-50%, 0);
+    z-index: 8;
+    left: 50%;
+    top: 0;
+}
+
+#Home section#MoreFlavors figure:nth-child(4) {
+    transform: rotate(10deg) translate(10%, -3%);
+    z-index: 7;
+    right: 25%;
+    top: 5vh;
+    filter: blur(0.5px);
+}
+
+#Home section#MoreFlavors figure:nth-child(5) {
+    transform: rotate(15deg) translate(10%, -7.5%);
+    z-index: 6;
+    top: 15vh;
+    right: 10%;
+    filter: blur(1px);
+}
+
+#Home section#MoreFlavors figure:nth-child(1):hover {
+    transform: rotate(-15deg) translate(-10%, -7.5%) translateY(-10vh);
+}
+
+#Home section#MoreFlavors figure:nth-child(2):hover {
+    transform: rotate(-10deg) translate(-10%, -3%) translateY(-10vh);
+}
+
+#Home section#MoreFlavors figure:nth-child(3):hover {
+    transform: rotate(0deg) translate(-50%, 0) translateY(-10vh);
+}
+
+#Home section#MoreFlavors figure:nth-child(4):hover {
+    transform: rotate(10deg) translate(10%, -3%) translateY(-10vh);
+}
+
+#Home section#MoreFlavors figure:nth-child(5):hover {
+    transform: rotate(15deg) translate(10%, -7.5%) translateY(-10vh);
+}
+
+#Home section#MoreFlavors>button {
+    width: fit-content;
+    height: fit-content;
+
+    padding: 2.5vh 2.5vw;
+
+    border-radius: 5vh;
+    border: none;
+
+    line-height: 12px;
+
+    background: linear-gradient(45deg, rgb(109, 8, 21) 0%, rgb(219, 25, 51) 75%, rgb(250, 58, 83) 100%);
+}
+
+
+/* - More Informations */
+
+#Home section#MoreInformations {
+    height: 95vh;
+    width: 100%;
+
+    padding: 8vh 0;
+    box-sizing: content-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(0deg,
+            rgba(7, 7, 7, 0%) 20%,
+            rgba(7, 7, 7, 10%) 25%,
+            rgba(7, 7, 7, 5%) 50%,
+            rgba(7, 7, 7, 0%) 75%),
+
+        radial-gradient(ellipse 60% 95% at center bottom,
+            rgba(7, 7, 7, 0%) 0%,
+            rgba(7, 7, 7, 100%) 100%),
+
+        radial-gradient(ellipse 60% 95% at center bottom,
+            rgba(253, 234, 234, 50%) 0%,
+            rgba(210, 195, 195, 50%) 40%,
+            rgba(158, 158, 148, 50%) 80%),
+
+        rgb(109, 8, 21);
+
+    position: sticky;
+    top: 0;
+}
+
+#Home section#MoreInformations #Description {
+    height: 95vh;
+    width: 35vw;
+    padding: 0 5vw;
+
+    position: absolute;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    gap: 5vh;
+}
+
+#Home section#MoreInformations h1 {
+    color: rgb(253, 234, 234);
+    font-size: 64px;
+    text-transform: capitalize;
+}
+
+#Home section#MoreInformations h2 {
+    text-align: end;
+    font-weight: 100;
+}
+
+#Home section#MoreInformations button {
+    width: fit-content;
+    height: fit-content;
+
+    padding: 2.5vh 2.5vw;
+
+    border-radius: 5vh;
+    border: none;
+
+    line-height: 12px;
+
+    background: linear-gradient(45deg, rgb(84, 112, 41) 0%, rgb(105, 162, 48) 75%, rgb(130, 206, 72) 100%);
+}
+
+#Home section#MoreInformations figure {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#Home section#MoreInformations figure img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(15deg);
+}
+
+#Home section#MoreInformations figure .More {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    pointer-events: none;
+}
+
+#Home section#MoreInformations figure .More:nth-child(1) {
+    left: 50%;
+    transform: rotate(0) translate(-50%, 1.5%);
+}
+
+#Home section#MoreInformations figure .More:nth-child(2) {
+    left: 50%;
+    transform: rotate(165deg) translate(calc(50% - 1.75%), 12.5%);
+}
+
+#Home section#MoreInformations figure .More:nth-child(3) {
+    left: 50%;
+    transform: rotate(-90deg) translate(-1.5%, -50%);
+}
+
+#Home section#MoreInformations figure .More .More-Center {
+    fill: transparent;
+    pointer-events: all;
+    transition: 1s;
+}
+
+#Home section#MoreInformations figure .More .More-Center:hover {
+    fill: rgb(253, 234, 234);
+}
+
+#Home section#MoreInformations figure .MoreDescription {
+    width: 22vw;
+
+    position: absolute;
+    color: rgb(253, 234, 234);
+
+    opacity: 0;
+    transition: 1s;
+}
+
+#Home section#MoreInformations figure .MoreDescription:nth-of-type(1) {
+    /*
+    top: 30px;
+    left: -294px;
+    */
+
+    top: 2.97vh;
+    left: 12vw;
+}
+
+#Home section#MoreInformations figure .MoreDescription:nth-of-type(2) {
+    top: 68.57vh;
+    left: -19vw;
+
+    /*
+    top: 686px;
+    left: -382px;
+    */
+
+    top: 68.57vh;
+    left: 7.6vw;
+}
+
+#Home section#MoreInformations figure .MoreDescription:nth-of-type(3) {
+    top: 68.57vh;
+    right: -19vw;
+
+    /*
+    top: 686px;
+    right: -382px;
+    */
+
+    top: 68.57vh;
+    right: 7.6vw;
+
+    text-align: start;
+}
+
+#Home section#MoreInformations figure div:has(.More:nth-of-type(1) .More-Center:hover) .MoreDescription:nth-of-type(1),
+#Home section#MoreInformations figure div:has(.More:nth-of-type(2) .More-Center:hover) .MoreDescription:nth-of-type(3),
+#Home section#MoreInformations figure div:has(.More:nth-of-type(3) .More-Center:hover) .MoreDescription:nth-of-type(2) {
+    opacity: 1;
+}
+
+
+/* -------------------------------------------------------------------------------*/
+/* About Us */
+
+/* - About Product */
+
+#AboutUs section#AboutProduct {
+    width: 100%;
+    height: 90vh;
+
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 12.5vw;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#AboutUs section#AboutProduct #Product img {
+    transform: scaleX(-1);
+}
+
+#AboutUs section#AboutProduct #Description {
+    display: flex;
+    flex-direction: column;
+    gap: 7.5vh;
+
+    width: 37.5vw;
+}
+
+#AboutUs section#AboutProduct #Logo {
+    height: 25vh;
+}
+
+#AboutUs section#AboutProduct #SocialMedia {
+    display: flex;
+    gap: 2.5vh;
+}
+
+#AboutUs section#AboutProduct button {
+    width: fit-content;
+    height: fit-content;
+
+    padding: 2.5vh 2.5vw;
+
+    border-radius: 5vh;
+    border: none;
+
+    line-height: 12px;
+
+    background: linear-gradient(45deg, rgb(84, 112, 41) 0%, rgb(105, 162, 48) 75%, rgb(130, 206, 72) 100%);
+}
+
+/* - Sponsors */
+
+#AboutUs section#Sponsors {
+    height: 25vh;
+
+    padding: 5vh 7.5vw;
+
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+
+    justify-content: space-between;
+    align-items: center;
+
+    background: linear-gradient(45deg, rgb(109, 8, 21) 0%, rgb(219, 25, 51) 75%, rgb(250, 58, 83) 100%);
+}
+
+/* - Our Services */
+
+#AboutUs section#OurServices {
+    height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+
+    align-items: center;
+    justify-content: center;
+
+    color: rgb(253, 234, 234);
+}
+
+#AboutUs section#OurServices #Content {
+    width: 30vw;
+    min-width: 300px;
+}
+
+#AboutUs section#OurServices #Title {
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 600;
+    text-transform: capitalize;
+
+    width: fit-content;
+    height: fit-content;
+
+    padding: 2.5vh 2.5vw;
+
+    border-radius: 5vh;
+    border: none;
+
+    background: linear-gradient(45deg, rgb(109, 8, 21) 0%, rgb(219, 25, 51) 75%, rgb(250, 58, 83) 100%);
+}
+
+#AboutUs section#OurServices #SubTitle {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+
+    align-items: center;
+    justify-content: center;
+}
+
+#AboutUs section#OurServices>div {
+    margin: 2.5vh 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vh;
+
+    align-items: center;
+    justify-content: center;
+}
+
+#AboutUs section#OurServices>div h1 {
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+#AboutUs section#OurServices div h1 span {
+    color: rgb(105, 162, 48);
+}
+
+#AboutUs section#OurServices hr {
+    border: 0;
+    height: 1px;
+    width: 7.5vw;
+    min-width: 125px;
+    background: linear-gradient(90deg, rgb(253, 234, 234) 50%, rgb(109, 8, 21) 75%, rgb(219, 25, 51) 100%);
+}
+
+#AboutUs section#OurServices h2 {
+    text-align: justify;
+    hyphens: auto;
+}
+
+#AboutUs section#OurServices #Contributions {
+    margin-top: 5vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25vw;
+
+    height: 25vh;
+}
+
+#AboutUs section#OurServices #Contributions div {
+    aspect-ratio: 1;
+    height: fit-content;
+    width: 10vw;
+    min-width: 200px;
+    padding: 2.5vh 1.25vw;
+
+    background-color: aqua;
+
+    border-radius: 0 0 1.25vw 1.25vw;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#AboutUs section#OurServices #Contributions div img {
+    width: 2.5vw;
+    aspect-ratio: 1;
+}
+
+#AboutUs section#OurServices #Contributions div h1 {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+
+#AboutUs section#OurServices #Contributions div h2 {
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 400;
+    text-align: center;
+}
+
+#AboutUs section#OurServices #Contributions div.Type1 {
+    align-self: flex-start;
+    background: linear-gradient(0deg, rgba(109, 8, 21, 50%) 0%, rgba(7, 7, 7, 0%) 90%);
+}
+
+#AboutUs section#OurServices #Contributions div.Type2 {
+    align-self: flex-end;
+    background: linear-gradient(0deg, rgb(22, 18, 18) 0%, rgba(15, 13, 13, 50%) 45%, rgba(7, 7, 7, 0%) 90%);
+}
+
+/* - Our Team */
+
+#AboutUs section#OurTeam {
+    height: 108vh;
+    padding: 7.5vh;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+
+    align-items: center;
+
+    background: linear-gradient(225deg, rgb(109, 8, 21) 0%, rgb(219, 25, 51) 75%, rgb(250, 58, 83) 100%);
+
+    color: rgb(253, 234, 234);
+}
+
+#AboutUs section#OurTeam #Content {
+    width: 30vw;
+    min-width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vh;
+
+    align-items: center;
+    justify-content: center;
+}
+
+#AboutUs section#OurTeam #Title {
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 600;
+    text-transform: capitalize;
+
+    width: fit-content;
+    height: fit-content;
+
+    padding: 2.5vh 2.5vw;
+
+    border-radius: 5vh;
+    border: none;
+
+    background: linear-gradient(45deg, rgb(7, 7, 7) 0%, rgb(15, 13, 13) 50%, rgb(22, 18, 18) 100%);
+}
+
+#AboutUs section#OurTeam #SubTitle {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+
+    align-items: center;
+    justify-content: center;
+}
+
+#AboutUs section#OurTeam>div h1 {
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+#AboutUs section#OurTeam div h1 span {
+    color: rgb(105, 162, 48);
+}
+
+#AboutUs section#OurTeam hr {
+    border: 0;
+    height: 1px;
+    width: 7.5vw;
+    min-width: 125px;
+    background: linear-gradient(90deg, rgb(253, 234, 234) 50%, rgb(84, 112, 41) 75%, rgb(105, 162, 48) 100%);
+}
+
+#AboutUs section#OurTeam h2 {
+    text-align: justify;
+    hyphens: auto;
+}
+
+#AboutUs section#OurTeam #Texts {
+    margin-top: 5vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25vw;
+
+    height: 25vh;
+}
+
+#AboutUs section#OurTeam #Texts div {
+    aspect-ratio: 1;
+    height: fit-content;
+    width: 23.75vw;
+    min-width: 450px;
+
+    height: 20vh;
+    min-height: 200px;
+
+    padding: 2.5vh 2.5vw;
+
+    border-radius: 2.5vw 2.5vw 2.5vw 0;
+
+    background: linear-gradient(45deg, rgb(7, 7, 7) 0%, rgb(15, 13, 13) 50%, rgb(22, 18, 18) 100%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#AboutUs section#OurTeam #Texts div h2 {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+
+/* -------------------------------------------------------------------------------*/
+/* Need Help */
+
+/* - Informations */
+
+#NeedHelp section#Content {
+    padding: 10vh 5vw;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+}
+
+#NeedHelp section#Content #Title {
+    color: rgb(219, 25, 51);
+}
+
+#NeedHelp section#Content #Grid {
+    display: grid;
+    grid-template-columns: 30vw 50vw;
+
+    justify-content: space-between;
+}
+
+#NeedHelp section#Content #Grid>div {
+    height: 80vh;
+}
+
+#NeedHelp section#Content #Grid #Informations {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vh;
+}
+
+#NeedHelp section#Content #Grid .Information {
+    border-radius: 7.5vh;
+    padding: 2.5vh 1.25vw;
+
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    align-items: center;
+    gap: 1.25vw;
+
+    background-color: rgba(7, 7, 7, 50%);
+    box-shadow: 0 1px 4px 0px rgba(255, 255, 255, 0.2) inset, 0 -0.5px 1px 0px rgba(255, 255, 255, 0.1) inset, 0 0 100px 20px rgb(22, 18, 18, 50%);
+}
+
+#NeedHelp section#Content #Grid .Information svg {
+    height: 2vh;
+    width: 1vw;
+
+    box-sizing: content-box;
+    padding: 1.5vh 1.25vw;
+    border-radius: 7.5vh;
+
+    box-shadow: 0 1px 4px 0px rgba(255, 255, 255, 0.2) inset, 0 -0.5px 1px 0px rgba(255, 255, 255, 0.1) inset;
+}
+
+#NeedHelp section#Content #Grid .Information a {
+    width: fit-content;
+    height: fit-content;
+
+    justify-self: flex-end;
+    align-self: flex-start;
+}
+
+#NeedHelp section#Content #Grid .Information a svg {
+    height: 1vh;
+    width: 0.5vw;
+
+    box-sizing: content-box;
+    padding: 0.75vh 0.375vw;
+    border-radius: 7.5vh;
+
+    box-shadow: 0 2px 4px 0px rgba(255, 255, 255, 0.2) inset, 0 1px 2px 0px rgba(255, 255, 255, 0.1) inset;
+}
+
+/* - Form Menssage */
+
+#NeedHelp section#Content #Grid #FormMessage {
+    border-radius: 7.5vh;
+    padding: 7.5vh 3.75vw;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+
+    background-color: rgba(7, 7, 7, 50%);
+    box-shadow: 0 1px 4px 0px rgba(255, 255, 255, 0.2) inset, 0 -0.5px 1px 0px rgba(255, 255, 255, 0.1) inset, 0 0 100px 20px rgb(22, 18, 18, 50%);
+}
+
+#NeedHelp section#Content #Grid #FormMessage h1 {
+    color: rgb(253, 234, 234);
+    font-size: 64px;
+    line-height: 64px;
+}
+
+#NeedHelp section#Content #Grid #FormMessage .input {
+    position: relative;
+}
+
+#NeedHelp section#Content #Grid #FormMessage label {
+    position: absolute;
+    left: calc(3.75vw + 15px);
+    transform: translateY(1vh);
+
+    pointer-events: none;
+    user-select: none;
+
+    animation: 0.5s;
+    background-color: rgba(7, 7, 7, 0%);
+    width: fit-content;
+    padding: 0.6vh 0.75vw;
+    border-radius: 2vh;
+
+    font-size: 12px;
+    font-weight: 300;
+    color: rgb(158, 148, 148);
+
+    pointer-events: none;
+
+    transition: 0.5s;
+}
+
+#NeedHelp section#Content #Grid #FormMessage input:focus+label,
+#NeedHelp section#Content #Grid #FormMessage textarea:focus+label {
+    color: rgb(253, 234, 234);
+    background-color: rgba(7, 7, 7, 100%);
+    border: solid 1px rgb(253, 234, 234);
+    transform: translateY(-55%);
+}
+
+#NeedHelp section#Content #Grid #FormMessage input,
+#NeedHelp section#Content #Grid #FormMessage textarea {
+    color: rgb(253, 234, 234);
+    font-size: 15px;
+
+    position: relative;
+
+    background: none;
+    border: none;
+    border-bottom: rgb(253, 234, 234) solid 1px;
+    width: calc(100% / 3 * 2);
+    padding: 20px 15px;
+
+    resize: none;
+    overflow: visible;
+
+    animation: 0.5s;
+}
+
+#NeedHelp section#Content #Grid #FormMessage input:focus,
+#NeedHelp section#Content #Grid #FormMessage textarea:focus {
+    border-radius: 5px;
+    border: rgb(253, 234, 234) solid 1px;
+}
+
+#NeedHelp section#Content #Grid #FormMessage input {
+    height: 6vh;
+}
+
+#NeedHelp section#Content #Grid #FormMessage textarea {
+    height: 15vh;
+}
+
+#NeedHelp section#Content #Grid #FormMessage button {
+    width: fit-content;
+    height: fit-content;
+
+    padding: 2.5vh 2.5vw;
+
+    border-radius: 5vh;
+    border: none;
+
+    line-height: 12px;
+
+    background: linear-gradient(45deg, rgb(109, 8, 21) 0%, rgb(219, 25, 51) 75%, rgb(250, 58, 83) 100%);
+}
+
+#NeedHelp section#Content #Grid #FormMessage textarea::-webkit-scrollbar-track {
+    background: rgb(7, 7, 7);
+    border-radius: 999px;
+}
+
+#NeedHelp section#Content #Grid #FormMessage textarea::-webkit-scrollbar-thumb {
+    background: rgba(158, 148, 148, 25%);
+    border-radius: 999px;
+
+    transition: 1s;
+}
+
+#NeedHelp section#Content #Grid #FormMessage textarea::-webkit-scrollbar-thumb:hover {
+    background: rgba(253, 234, 234, 50%);
+}
+
+
+/* -------------------------------------------------------------------------------*/
+/* Our Products */
+
+/* - Banner */
+
+#OurProducts {
+    background-color: rgb(7, 7, 7);
+}
+
+#OurProducts #Banner {
+    height: 95vh;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, 37.5vw);
+    justify-content: space-between;
+    align-items: center;
+
+    background-image: url(img/ProductsBanner.jpg);
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+    z-index: 1;
+}
+
+#OurProducts #Banner div {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+
+    margin: 10vh 5vw 20vh 5vw;
+
+    position: relative;
+    z-index: 3;
+}
+
+#OurProducts #Banner div:last-of-type {
+    text-align: end;
+    align-items: end;
+}
+
+#OurProducts #Banner h1 {
+    font-size: 64px;
+    line-height: 64px;
+    color: rgb(253, 234, 234);
+    text-transform: capitalize;
+}
+
+#OurProducts #Banner h2 {
+    width: 24vw;
+}
+
+#OurProducts #Banner button {
+    width: fit-content;
+    height: fit-content;
+
+    padding: 2.5vh 2.5vw;
+
+    border-radius: 5vh;
+    border: none;
+
+    line-height: 12px;
+
+    background: linear-gradient(45deg, rgb(84, 112, 41) 0%, rgb(105, 162, 48) 75%, rgb(130, 206, 72) 100%);
+}
+
+
+/* - Products */
+
+#OurProducts #BackGroundFade {
+    margin: -5vh;
+    box-shadow: rgb(22, 18, 18) 0 -7.5vh 15vh 15vh;
+
+    position: relative;
+    z-index: 2;
+}
+
+#OurProducts #Products {
+    width: calc(100% - 7.5vw * 2);
+    height: 100%;
+
+    padding: 7.5vh 3.75vw;
+    border-radius: 12.5vh;
+    margin: 0 7.5vw 5vh 7.5vw;
+    transform: translateY(-20vh);
+
+    backdrop-filter: blur(7.5px) grayscale(50%) brightness(75%);
+    background-color: rgba(7, 7, 7, 25%);
+    box-shadow: 0 1px 4px 0px rgba(255, 255, 255, 0.2) inset, 0 -0.5px 1px 0px rgba(255, 255, 255, 0.1) inset, 0 0 100px 20px rgb(22, 18, 18, 50%);
+}
+
+/* -- Head */
+
+#OurProducts #Products .Head {
+    width: 100%;
+
+    padding: 2.5vh 1.25vw 5vh 1.25vw;
+    border-bottom: 1px solid rgb(253, 234, 234);
+
+    display: flex;
+    justify-content: space-between;
+}
+
+#OurProducts #Products>.Head {
+    flex-direction: row-reverse;
+}
+
+#OurProducts #Products .Head h1 {
+    width: 10.5vw;
+    height: 6vh;
+
+    display: flex;
+    align-items: center;
+
+    color: rgb(253, 234, 234);
+    white-space: nowrap;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 36px;
+    text-transform: capitalize;
+
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out 0.1s, width 0.25s ease-in 0.1s;
+}
+
+#OurProducts #Products .Head form {
+    width: 22vw;
+    display: flex;
+    gap: 1.25vw;
+    align-items: center;
+    justify-content: end;
+
+    padding: 1.5vh 1.5vw 1.5vh 1vw;
+    border-radius: 5vh;
+
+    background-color: rgba(7, 7, 7, 50%);
+    box-shadow: 0 1px 4px 0px rgba(255, 255, 255, 0.2) inset, 0 -0.5px 1px 0px rgba(255, 255, 255, 0.1) inset;
+
+    transition: width 0.5s ease;
+}
+
+#OurProducts #Products .Head input {
+    height: 25px;
+    width: 100%;
+
+    padding: 0.5vh 0.5vw;
+
+    color: rgb(210, 195, 195);
+    font-size: 20px;
+    line-height: 20px;
+
+    background: none;
+    border: none;
+}
+
+#OurProducts #Products .Head input::placeholder {
+    color: rgb(158, 148, 148);
+}
+
+#OurProducts #Products .Head input:focus {
+    outline: none;
+}
+
+#OurProducts #Products .Head button {
+    height: 20px;
+    width: 20px;
+
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+#OurProducts #Products .Head button svg {
+    height: 20px;
+    width: 20px;
+    aspect-ratio: 1;
+}
+
+/* -- Search */
+
+#OurProducts #SearchTerm::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    background: url('img/Cancel.svg') no-repeat center;
+    cursor: pointer;
+}
+
+#OurProducts #SearchResult {
+    margin: 0;
+    padding-top: 0;
+    display: flex;
+    row-gap: 0;
+
+    align-items: center;
+    justify-items: center;
+
+    opacity: 0;
+
+    height: 0;
+
+    position: relative;
+    z-index: -10;
+
+    transition: opacity 0.5s ease-in-out 0s;
+}
+
+#OurProducts #SearchResult nav {
+    grid-column: 1 / 5;
+    width: 100%;
+}
+
+#OurProducts #Products .Head:has(#SearchTerm:is(:focus, :not(:placeholder-shown))) h1 {
+    width: 0;
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.5s ease-in-out 0s, width 0.5s ease-out 0s;
+}
+
+#OurProducts #Products .Head form:has(#SearchTerm:is(:focus, :not(:placeholder-shown))) {
+    width: 100%;
+}
+
+#OurProducts #SearchAnimation {
+    display: flex;
+    flex-direction: column;
+
+    order: 1
+}
+
+#OurProducts #Exhibitor {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.75s ease-in-out 0s, transform 0.75s ease-in-out 0s;
+}
+
+#OurProducts .Head:has(#SearchTerm:is(:focus, :not(:placeholder-shown)))~#SearchAnimation #Exhibitor {
+    width: 81.5vw;
+
+    opacity: 0;
+    position: absolute;
+    transform: translateY(10vh);
+    pointer-events: none;
+
+    transition: opacity 0.5s ease-in-out 0s, transform 0.5s ease-in-out 0s;
+}
+
+#OurProducts .Head:has(#SearchTerm:is(:focus, :not(:placeholder-shown)))~#SearchAnimation #SearchResult {
+    margin: 2.5vh 2.5vw;
+    padding-top: 7.5vh;
+
+    height: fit-content;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 7.5vh;
+
+    position: relative;
+    z-index: 3;
+
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out 0.75s;
+}
+
+/* -- Filters */
+
+#OurProducts #Products #Filters {
+    display: flex;
+    justify-content: space-around;
+
+    margin: 7.5vh 0 2.5vh 0;
+}
+
+#OurProducts #Products #Filters button h2 {
+    color: rgb(158, 148, 148);
+    line-height: 24px;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+#OurProducts #Products #Filters .ProductLine {
+    width: 12.5vw;
+    height: 5.5vh;
+
+    background-color: rgba(7, 7, 7, 50%);
+    box-shadow: 0 1px 4px 0px rgba(255, 255, 255, 0.2) inset, 0 -0.5px 1px 0px rgba(255, 255, 255, 0.1) inset;
+    border: none;
+    border-radius: 5.5vh;
+    border-bottom: 1px solid rgba(210, 195, 195, 50%);
+}
+
+#OurProducts #Products #Filters #LineTradicional {
+    border-bottom: 1px solid rgba(219, 25, 51, 50%);
+}
+
+#OurProducts #Products #Filters #LineZero {
+    border-bottom: 1px solid rgba(53, 115, 207, 50%);
+}
+
+#OurProducts #Products #Filters #LineDiet {
+    border-bottom: 1px solid rgba(42, 105, 42, 50%);
+}
+
+#OurProducts #Products #Filters #LineExtra {
+    border-bottom: 1px solid rgba(210, 195, 195, 50%);
+}
+
+#OurProducts #Products #Filters #LineFruits {
+    border-bottom: 1px solid rgba(219, 93, 25, 50%);
+}
+
+#OurProducts #Products #Filters #MoreFilters {
+    height: 5.5vh;
+    padding: 0 1.5vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(7, 7, 7, 50%);
+    box-shadow: 0 1px 4px 0px rgba(255, 255, 255, 0.2) inset, 0 -0.5px 1px 0px rgba(255, 255, 255, 0.1) inset;
+    background: none;
+    border: none;
+    border-radius: 5.5vh;
+    border-bottom: 1px solid rgba(210, 195, 195, 50%);
+}
+
+#OurProducts #Products #Filters #MoreFilters svg {
+    height: 30px;
+    width: 28px;
+    stroke: rgb(158, 148, 148);
+}
+
+/* -- Content Grid */
+
+#OurProducts #Products #Content {
+    margin: 7.5vh 0;
+    display: grid;
+    grid-template-columns: 22.5vw 1fr;
+}
+
+/* --- Product Lines */
+#OurProducts #Products #Content #ProductLines {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+
+    border-radius: 5vh;
+    padding: 2.5vh 2.5vw;
+
+    background: linear-gradient(0deg, rgb(7, 7, 7, 50%) 0%, rgb(15, 13, 13, 50%) 50%, rgb(22, 18, 18, 50%) 100%);
+    box-shadow: 0 1px 4px 0px rgba(255, 255, 255, 0.2) inset, 0 -0.5px 1px 0px rgba(255, 255, 255, 0.1) inset, 0 0 100px 20px rgb(22, 18, 18, 50%) inset;
+}
+
+#OurProducts #Products #Content #ProductLines .Line {
+    width: 100%;
+    height: 45vh;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#OurProducts #Products #Content #ProductLines .Line svg:first-of-type {
+    width: 100%;
+}
+
+#OurProducts #Products #Content #ProductLines .Line h2 {
+    line-height: 24px;
+    font-size: 20px;
+}
+
+/* -- Flavors */
+
+#OurProducts #Products #Flavors {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+
+    padding: 2.5vh 2.5vw;
+
+    overflow-x: hidden;
+}
+
+/* --- Shelf */
+#OurProducts .Shelf {
+    width: 100%;
+    height: 45vh;
+
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+
+    padding: 0 2.5vw;
+
+    overflow-y: hidden;
+    overflow-x: auto;
+
+    position: relative;
+}
+
+#OurProducts .Shelf::-webkit-scrollbar {
+    height: 7.5px;
+}
+
+#OurProducts .Shelf:nth-of-type(1)::-webkit-scrollbar-track {
+    background: rgb(12, 11, 11);
+}
+
+#OurProducts .Shelf:nth-of-type(2)::-webkit-scrollbar-track {
+    background: rgb(12, 10, 10);
+}
+
+#OurProducts .Shelf:nth-of-type(3)::-webkit-scrollbar-track {
+    background: rgb(10, 10, 10);
+}
+
+#OurProducts .Shelf:nth-of-type(4)::-webkit-scrollbar-track {
+    background: rgb(10, 9, 9);
+}
+
+#OurProducts .Shelf:nth-of-type(5)::-webkit-scrollbar-track {
+    background: rgb(9, 9, 9);
+}
+
+#OurProducts #BestSelling .Shelf::-webkit-scrollbar-track {
+    background: rgb(7, 7, 7);
+}
+
+#OurProducts #RecentViewed .Shelf::-webkit-scrollbar-track {
+    background: rgb(7, 7, 7);
+}
+
+#OurProducts .Shelf:nth-of-type(1)::-webkit-scrollbar-thumb {
+    background: rgba(219, 25, 51, 0.25);
+    border-radius: 999px;
+
+    transition: 1s;
+}
+
+#OurProducts .Shelf:nth-of-type(1)::-webkit-scrollbar-thumb:hover {
+    background: rgba(219, 25, 51, 0.75);
+}
+
+#OurProducts .Shelf:nth-of-type(2)::-webkit-scrollbar-thumb {
+    background: rgba(53, 115, 207, 0.25);
+    border-radius: 999px;
+
+    transition: 1s;
+}
+
+#OurProducts .Shelf:nth-of-type(2)::-webkit-scrollbar-thumb:hover {
+    background: rgba(53, 115, 207, 0.75);
+}
+
+#OurProducts .Shelf:nth-of-type(3)::-webkit-scrollbar-thumb {
+    background: rgba(42, 105, 42, 0.25);
+    border-radius: 999px;
+
+    transition: 1s;
+}
+
+#OurProducts .Shelf:nth-of-type(3)::-webkit-scrollbar-thumb:hover {
+    background: rgba(42, 105, 42, 0.75);
+}
+
+#OurProducts .Shelf:nth-of-type(4)::-webkit-scrollbar-thumb {
+    background: rgba(253, 234, 234, 0.25);
+    border-radius: 999px;
+
+    transition: 1s;
+}
+
+#OurProducts .Shelf:nth-of-type(4)::-webkit-scrollbar-thumb:hover {
+    background: rgba(253, 234, 234, 0.75);
+}
+
+#OurProducts .Shelf:nth-of-type(5)::-webkit-scrollbar-thumb {
+    background: rgba(219, 93, 25, 0.25);
+    border-radius: 999px;
+
+    transition: 1s;
+}
+
+#OurProducts .Shelf:nth-of-type(5)::-webkit-scrollbar-thumb:hover {
+    background: rgba(219, 93, 25, 0.75);
+}
+
+#OurProducts #BestSelling .Shelf::-webkit-scrollbar-thumb {
+    background: rgba(253, 234, 234, 0.25);
+    border-radius: 999px;
+
+    transition: 1s;
+}
+
+#OurProducts #BestSelling .Shelf::-webkit-scrollbar-thumb:hover {
+    background: rgba(253, 234, 234, 0.75);
+}
+
+#OurProducts #RecentViewed .Shelf::-webkit-scrollbar-thumb {
+    background: rgba(253, 234, 234, 0.25);
+    border-radius: 999px;
+
+    transition: 1s;
+}
+
+#OurProducts #RecentViewed .Shelf::-webkit-scrollbar-thumb:hover {
+    background: rgba(253, 234, 234, 0.75);
+}
+
+/* --- Product */
+#OurProducts .Product {
+    width: 12.5vw;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#OurProducts .Product figure {
+    width: 12.5vw;
+    aspect-ratio: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    border-radius: 2.5vh;
+    background: linear-gradient(0deg, rgb(7, 7, 7, 50%) 0%, rgb(15, 13, 13, 50%) 50%, rgb(22, 18, 18, 50%) 100%);
+    box-shadow: 0 1px 4px 0px rgba(255, 255, 255, 0.2) inset, 0 -0.5px 1px 0px rgba(255, 255, 255, 0.1) inset, 0 0 100px 20px rgb(22, 18, 18, 50%) inset;
+    border-bottom: 1px solid rgba(210, 195, 195, 75%);
+}
+
+#OurProducts .Product figure.Tradicional {
+    border-bottom: 1px solid rgba(219, 25, 51, 75%);
+}
+
+#OurProducts .Product figure.Zero {
+    border-bottom: 1px solid rgba(53, 115, 207, 75%);
+}
+
+#OurProducts .Product figure.Diet {
+    border-bottom: 1px solid rgba(42, 105, 42, 75%);
+}
+
+#OurProducts .Product figure.Extra {
+    border-bottom: 1px solid rgba(210, 195, 195, 75%);
+}
+
+#OurProducts .Product figure.Fruits {
+    border-bottom: 1px solid rgba(219, 93, 25, 75%);
+}
+
+#OurProducts .Product figure img {
+    height: 17.5vh;
+    transform: rotate(32.5deg);
+}
+
+#OurProducts .Product figure label {
+    font-size: 16px;
+    line-height: 16px;
+    color: rgb(253, 234, 234);
+
+    position: absolute;
+    top: 1.2vh;
+    right: 0.6vw;
+
+    padding: 0.5vh 0.5vw;
+    border-radius: 5vh;
+    border: 1px solid rgb(253, 234, 234);
+
+    user-select: none;
+}
+
+#OurProducts .Product h1 {
+    font-size: 30px;
+    line-height: 30px;
+    color: rgb(253, 234, 234);
+    text-align: center;
+    text-transform: capitalize;
+}
+
+#OurProducts .Product h2 {
+    font-size: 16px;
+    line-height: 16px;
+    color: rgb(253, 234, 234);
+}
+
+#OurProducts .Product>div {
+    height: 15vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 2.5vh 0.5vw;
+}
+
+#OurProducts .Product .Informations {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.25vw;
+}
+
+#OurProducts .Product .Informations div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#OurProducts .Product .Buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#OurProducts .Product button {
+    width: 100px;
+    padding: 0.75vh 0.75vw;
+    border-radius: 5vh;
+
+    border: none;
+    background: none;
+
+    border: 1px solid transparent;
+}
+
+#OurProducts .Product button h3 {
+    line-height: 12px;
+    font-size: 12px;
+    font-weight: 300;
+    color: rgb(253, 234, 234);
+}
+
+#OurProducts .Product .SeeMore {
+    border: 1px solid rgb(253, 234, 234);
+}
+
+#OurProducts .Product .AddCreateAccount {
+    background: linear-gradient(45deg, rgb(109, 8, 21) 0%, rgb(219, 25, 51) 75%, rgb(250, 58, 83) 100%);
+}
+
+
+/* -- Navigation */
+
+#OurProducts #BackGroundFade nav {
+    height: 8vh;
+    border-top: 1px solid rgba(253, 234, 234);
+
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
+    align-items: center;
+}
+
+#OurProducts #BackGroundFade nav #Previus,
+#OurProducts #BackGroundFade nav #Next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25vw;
+}
+
+#OurProducts #BackGroundFade nav #Previus {
+    opacity: 0%;
+}
+
+#OurProducts #BackGroundFade nav #Pages {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+}
+
+#OurProducts #BackGroundFade nav #Pages #CurrentPage {
+    background-color: rgb(22, 18, 18);
+}
+
+#OurProducts #BackGroundFade nav h2 {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 300;
+}
+
+#OurProducts #BackGroundFade nav svg {
+    height: 15px;
+    width: 17px;
+}
+
+#OurProducts #BackGroundFade nav #Pages h2 {
+    height: 3vh;
+    width: 1.5vw;
+    border-radius: 0.5vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* -- Best Selling */
+
+#OurProducts #BestSelling {
+    padding: 2.5vh 0;
+}
+
+#OurProducts #BestSelling .Head {
+    padding: 2.5vh 1.25vw;
+    margin: 0 0 5vh 0;
+}
+
+
+/* -- Recent Viewed */
+
+#OurProducts #RecentViewed {
+    padding: 7.5vh 0 2.5vh 0;
+}
+
+#OurProducts #RecentViewed .Head {
+    padding: 2.5vh 1.25vw;
+    margin: 0 0 5vh 0;
+}
+
+
+/* -------------------------------------------------------------------------------*/
+/* Product Page */
+
+/* - About Product */
+
+#ProductPage section#Content {
+    padding: 10vh 5vw;
+
+    display: grid;
+    grid-template-columns: 51.75vw auto;
+    gap: 5vw;
+}
+
+#ProductPage section#Content #Text {
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+}
+
+#ProductPage section#Content #TittleSubtittle {
+    width: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+#ProductPage section#Content #Title {
+    color: rgb(219, 25, 51);
+    white-space: nowrap;
+    width: fit-content;
+}
+
+#ProductPage section#Content .Subtitle {
+    font-size: 24px;
+    line-height: 24px;
+    width: 50vw;
+}
+
+#ProductPage #Product img {
+    transform: rotate(32.5deg);
+}
+
+#ProductPage #NutritionalInformation {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+#ProductPage #NutritionalInformation h1 {
+    font-size: 64px;
+    line-height: 64px;
+    color: rgba(253, 234, 234);
+    text-transform: capitalize;
+}
+
+#ProductPage #NutritionalInformation #Informations {
+    display: flex;
+    gap: 2.5vw;
+}
+
+#ProductPage #NutritionalInformation .Nutrition {
+    padding-top: 2vh;
+    width: 7.5vw;
+    aspect-ratio: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: rgb(210, 195, 195);
+}
+
+#ProductPage #NutritionalInformation .Nutrition h1 {
+    color: rgb(7, 7, 7);
+    font-weight: 500;
+}
+
+#ProductPage #NutritionalInformation .Nutrition h3 {
+    font-size: 16px;
+    line-height: 16px;
+    color: rgb(7, 7, 7);
+    font-weight: 400;
+}
+
+#ProductPage #NutritionalInformation .Nutrition h2 {
+    height: 4vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(158, 148, 148);
+
+    font-size: 24px;
+    line-height: 24px;
+    color: rgb(7, 7, 7);
+    font-weight: 450;
+}
+
+#ProductPage #NutritionalInformation .Nutrition#inEmphasis {
+    background-color: rgb(219, 25, 51);
+}
+
+#ProductPage #NutritionalInformation .Nutrition#inEmphasis h1 {
+    color: rgb(253, 234, 234);
+}
+
+#ProductPage #NutritionalInformation .Nutrition#inEmphasis h3 {
+    color: rgb(253, 234, 234);
+}
+
+#ProductPage #NutritionalInformation .Nutrition#inEmphasis h2 {
+    background-color: rgb(109, 8, 21);
+    color: rgb(253, 234, 234);
+}
+
+#ProductPage #Options {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+
+    position: relative;
+    z-index: 20;
+}
+
+#ProductPage #Options #Sizes {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    width: 27.5vw;
+}
+
+#ProductPage #Options #Sizes input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#ProductPage #Options #Sizes figure {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+
+    cursor: pointer;
+    opacity: 25%;
+
+    transition: opacity 0.5s ease, color 0.5s ease;
+}
+
+#ProductPage #Options #Sizes figure:hover {
+    opacity: 66%;
+}
+
+#ProductPage #Options #Sizes input:checked~figure {
+    opacity: 100%;
+}
+
+#ProductPage #Options #Sizes figure svg {
+    fill: rgb(158, 148, 148);
+    transition: fill 0.5s ease;
+}
+
+#ProductPage #Options #Sizes input:checked~figure svg {
+    fill: rgb(253, 234, 234);
+}
+
+#ProductPage #Options #Sizes figure h3 {
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    color: rgb(158, 148, 148);
+    font-weight: 400;
+    transition: color 0.5s ease;
+}
+
+#ProductPage #Options #Sizes input:checked~figure h3 {
+    color: rgb(253, 234, 234);
+}
+
+#ProductPage #Options #Quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 27.5vw;
+
+    position: relative;
+}
+
+#ProductPage #Options #Quantity #QuantitySelector {
+    height: 7.5vh;
+    width: 10vw;
+    padding: 0 2.25vw;
+
+    border-radius: 5vh;
+    background: none;
+
+    border: 1px solid rgb(253, 234, 234);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#ProductPage #Options #Quantity input[type="number"] {
+    background: none;
+    border: none;
+
+    field-sizing: content;
+    width: auto;
+
+    font-size: 32px;
+    line-height: 32px;
+    color: rgb(253, 234, 234);
+
+    -moz-appearance: textfield;
+    appearance: textfield;
+
+    transition: 0.1s ease;
+}
+
+#ProductPage #Options #Quantity input[type=number]::-webkit-inner-spin-button,
+#ProductPage #Options #Quantity input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+#ProductPage #Options #Quantity input::-webkit-inner-spin-button,
+#ProductPage #Options #Quantity input::-webkit-outer-spin-button {
+    opacity: 1;
+    background: rgb(10, 9, 9);
+}
+
+#ProductPage #Options #Quantity #UnSelector {
+    display: flex;
+    gap: 0.75vw;
+    align-items: center;
+}
+
+#ProductPage #Options #Quantity #Un {
+    font-size: 32px;
+    line-height: 32px;
+    color: rgb(253, 234, 234);
+
+    pointer-events: none;
+    user-select: none;
+}
+
+#ProductPage #Options #Quantity #Selector {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#ProductPage #Options #Quantity #Selector .QuantityModifier {
+    background: none;
+    border: none;
+    padding: 0;
+
+    height: 15px;
+    width: 10px;
+}
+
+#ProductPage #Options #Quantity #Selector svg {
+    height: 11px;
+    width: 10px;
+}
+
+#ProductPage #Options #Quantity #Price {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-around;
+}
+
+#ProductPage #Options #Quantity #Price h2 {
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 400;
+    color: rgba(253, 234, 234);
+}
+
+#ProductPage #Options #Quantity #Price h3 {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 300;
+    color: rgb(158, 148, 148);
+}
+
+#ProductPage #Options #AddCreateAccount {
+    width: fit-content;
+    height: fit-content;
+
+    padding: 2.5vh 2.5vw;
+
+    border-radius: 5vh;
+    border: none;
+
+    line-height: 12px;
+
+    background: linear-gradient(45deg, rgb(109, 8, 21) 0%, rgb(219, 25, 51) 75%, rgb(250, 58, 83) 100%);
+}
+
+
+#ProductPage #Options #AddCreateAccount h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: rgb(253, 234, 234);
+
+    user-select: none;
+}
+
+
+/* -------------------------------------------------------------------------------*/
+/* CreateAccount */
+#CreateAccount #BackGroundFade {
+    padding-bottom: 25vh;
+}
+
+#CreateAccount section#Content {
+    margin: 10vh 25vw 0 25vw;
+    padding: 10vh 3.75vw;
+    border-radius: 12.5vh;
+
+    display: flex;
+    flex-direction: column;
+    gap: 7.5vh;
+
+    background-color: rgba(7, 7, 7, 50%);
+    box-shadow: 0 1px 4px 0px rgba(255, 255, 255, 0.2) inset, 0 -0.5px 1px 0px rgba(255, 255, 255, 0.1) inset, 0 0 100px 20px rgb(22, 18, 18, 50%);
+
+    text-align: center;
+}
+
+/* - Text */
+
+#CreateAccount section#Content #Text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+}
+
+#CreateAccount section#Content h1 {
+    color: rgb(253, 234, 234);
+    font-size: 64px;
+    line-height: 64px;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+#CreateAccount section#Content #Text svg {
+    box-sizing: content-box;
+    height: 5vw;
+    width: 5vw;
+    padding: 3.75vw;
+    border-radius: 50%;
+    box-shadow: 0 1px 4px 0px rgba(255, 255, 255, 0.2) inset, 0 -0.5px 1px 0px rgba(255, 255, 255, 0.1) inset, 0 0 100px 20px rgb(22, 18, 18, 50%);
+}
+
+/* - Form Create Account */
+
+#CreateAccount section#Content #FormCreateAccount {
+    border-radius: 7.5vh;
+    padding: 0 2.5vw;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15vh;
+
+    width: 100%;
+}
+
+#CreateAccount section#Content #FormCreateAccount #Form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+#CreateAccount section#Content #FormCreateAccount #Form #Name {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5vw;
+}
+
+#CreateAccount section#Content #FormCreateAccount .input {
+    position: relative;
+}
+
+#CreateAccount section#Content #FormCreateAccount label {
+    position: absolute;
+    left: calc(2.5vw + 15px);
+    transform: translateY(1vh);
+
+    pointer-events: none;
+    user-select: none;
+
+    animation: 0.5s;
+    background-color: rgba(7, 7, 7, 0%);
+    width: fit-content;
+    padding: 0.6vh 0.75vw;
+    border-radius: 2vh;
+
+    font-size: 12px;
+    font-weight: 300;
+    color: rgb(158, 148, 148);
+
+    pointer-events: none;
+
+    transition: 0.5s;
+}
+
+#CreateAccount section#Content #FormCreateAccount input:placeholder-shown:not(:focus)~label {
+    opacity: 0;
+}
+
+#CreateAccount section#Content #FormCreateAccount #Form #Name #NameLabel {
+    top: 0;
+}
+
+#CreateAccount section#Content #FormCreateAccount #Form #Name #LastNameLabel {
+    top: 0;
+    left: calc(50% - 1.25vw + 2.5vw + 15px);
+}
+
+#CreateAccount section#Content #FormCreateAccount #Form input[type="date"]::-webkit-calendar-picker-indicator {
+    background: url('img/Calendar.svg') center/contain no-repeat;
+    cursor: pointer;
+    color: transparent;
+    /* Oculta o ícone nativo */
+}
+
+#CreateAccount section#Content #FormCreateAccount .Date label {
+    opacity: 0;
+}
+
+#CreateAccount section#Content #FormCreateAccount input:focus+label {
+    color: rgb(253, 234, 234);
+    background-color: rgba(7, 7, 7, 100%);
+    border: solid 1px rgb(253, 234, 234);
+    opacity: 1;
+    transform: translateY(-55%);
+}
+
+#CreateAccount section#Content #FormCreateAccount input {
+    color: rgb(253, 234, 234);
+    font-size: 15px;
+
+    position: relative;
+
+    background: none;
+    border: none;
+    border-bottom: rgb(253, 234, 234) solid 1px;
+
+    height: 6vh;
+    width: 100%;
+    padding: 20px 15px;
+
+    resize: none;
+    overflow: visible;
+
+    animation: 0.5s;
+}
+
+#CreateAccount section#Content #FormCreateAccount input:focus {
+    border-radius: 5px;
+    border: rgb(253, 234, 234) solid 1px;
+}
+
+/* -- Form Create Account */
+
+#CreateAccount section#Content #FormCreateAccount #Action {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+#CreateAccount section#Content #FormCreateAccount button,
+#CreateAccount section#Content #FormCreateAccount a {
+    width: 100%;
+    height: fit-content;
+
+    padding: 2.5vh 2.5vw;
+
+    border-radius: 5vh;
+    border: none;
+
+    line-height: 12px;
+
+    background: linear-gradient(45deg, rgb(109, 8, 21) 0%, rgb(219, 25, 51) 75%, rgb(250, 58, 83) 100%);
+}
+
+#CreateAccount section#Content #FormCreateAccount a#Login {
+    border: 1px solid rgb(219, 25, 51);
+    background: none;
+}
+
+/* - Login With */
+
+#CreateAccount section#Content #LoginWith {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vh;
+}
+
+#CreateAccount section#Content #LoginWith #Accounts {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#CreateAccount section#Content #LoginWith #Accounts>a {
+    height: 10vh;
+    width: 12vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5vh;
+    box-shadow: 0 1px 4px 0px rgba(255, 255, 255, 0.2) inset, 0 -0.5px 1px 0px rgba(255, 255, 255, 0.1) inset, 0 0 75px 0px rgb(22, 18, 18, 50%);
+}
+
+#CreateAccount section#Content #LoginWith #Accounts svg {
+    height: 5vh;
+    width: 2.5vw;
+}
