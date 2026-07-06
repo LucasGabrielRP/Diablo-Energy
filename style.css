@@ -234,6 +234,7 @@ header nav button h3 {
     font-size: 24px;
     font-weight: lighter;
     color: rgb(15, 13, 13);
+    font-weight: 400;
 }
 
 header nav button#SeeYourCreateAccount {
@@ -603,7 +604,7 @@ footer #PagesFooter h2 span {
     transition: transform 0.5s ease;
 }
 
-#Home section#MoreFlavors figure .CreateAccount {
+#Home section#MoreFlavors figure .Card {
     display: flex;
     align-items: end;
 
@@ -694,6 +695,8 @@ footer #PagesFooter h2 span {
 
     background: linear-gradient(0deg, rgba(7, 7, 7, 1) 0%, rgba(15, 13, 13, 25%) 20%, rgba(22, 18, 18, 0) 50%);
     opacity: 0.75;
+
+    pointer-events: none;
 }
 
 #Home section#MoreFlavors figure:nth-child(1) {
@@ -1405,6 +1408,25 @@ footer #PagesFooter h2 span {
     transform: translateY(-55%);
 }
 
+#NeedHelp section#Content #Grid #FormMessage input:not(:placeholder-shown):not(:focus),
+#NeedHelp section#Content #Grid #FormMessage input:focus,
+#NeedHelp section#Content #Grid #FormMessage textarea:not(:placeholder-shown):not(:focus),
+#NeedHelp section#Content #Grid #FormMessage textarea:focus {
+    border-radius: 5px;
+    border: rgb(253, 234, 234) solid 1px;
+}
+
+#NeedHelp section#Content #Grid #FormMessage input:focus+label,
+#NeedHelp section#Content #Grid #FormMessage input:not(:placeholder-shown):not(:focus)~label,
+#NeedHelp section#Content #Grid #FormMessage textarea:focus+label,
+#NeedHelp section#Content #Grid #FormMessage textarea:not(:placeholder-shown):not(:focus)~label {
+    color: rgb(253, 234, 234);
+    background-color: rgba(7, 7, 7, 100%);
+    border: solid 1px rgb(253, 234, 234);
+    opacity: 1;
+    transform: translateY(-55%);
+}
+
 #NeedHelp section#Content #Grid #FormMessage input,
 #NeedHelp section#Content #Grid #FormMessage textarea {
     color: rgb(253, 234, 234);
@@ -2113,7 +2135,7 @@ footer #PagesFooter h2 span {
     border: 1px solid rgb(253, 234, 234);
 }
 
-#OurProducts .Product .AddCreateAccount {
+#OurProducts .Product .AddCart {
     background: linear-gradient(45deg, rgb(109, 8, 21) 0%, rgb(219, 25, 51) 75%, rgb(250, 58, 83) 100%);
 }
 
@@ -2488,7 +2510,7 @@ footer #PagesFooter h2 span {
     color: rgb(158, 148, 148);
 }
 
-#ProductPage #Options #AddCreateAccount {
+#ProductPage #Options #AddCart {
     width: fit-content;
     height: fit-content;
 
@@ -2514,6 +2536,7 @@ footer #PagesFooter h2 span {
 
 /* -------------------------------------------------------------------------------*/
 /* CreateAccount */
+
 #CreateAccount #BackGroundFade {
     padding-bottom: 25vh;
 }
@@ -2616,10 +2639,6 @@ footer #PagesFooter h2 span {
     transition: 0.5s;
 }
 
-#CreateAccount section#Content #FormCreateAccount input:placeholder-shown:not(:focus)~label {
-    opacity: 0;
-}
-
 #CreateAccount section#Content #FormCreateAccount #Form #Name #NameLabel {
     top: 0;
 }
@@ -2638,14 +2657,6 @@ footer #PagesFooter h2 span {
 
 #CreateAccount section#Content #FormCreateAccount .Date label {
     opacity: 0;
-}
-
-#CreateAccount section#Content #FormCreateAccount input:focus+label {
-    color: rgb(253, 234, 234);
-    background-color: rgba(7, 7, 7, 100%);
-    border: solid 1px rgb(253, 234, 234);
-    opacity: 1;
-    transform: translateY(-55%);
 }
 
 #CreateAccount section#Content #FormCreateAccount input {
@@ -2668,9 +2679,19 @@ footer #PagesFooter h2 span {
     animation: 0.5s;
 }
 
+#CreateAccount section#Content #FormCreateAccount input:not(:placeholder-shown):not(:focus),
 #CreateAccount section#Content #FormCreateAccount input:focus {
     border-radius: 5px;
     border: rgb(253, 234, 234) solid 1px;
+}
+
+#CreateAccount section#Content #FormCreateAccount input:focus+label,
+#CreateAccount section#Content #FormCreateAccount input:not(:placeholder-shown):not(:focus)~label {
+    color: rgb(253, 234, 234);
+    background-color: rgba(7, 7, 7, 100%);
+    border: solid 1px rgb(253, 234, 234);
+    opacity: 1;
+    transform: translateY(-55%);
 }
 
 /* -- Form Create Account */
@@ -2732,4 +2753,476 @@ footer #PagesFooter h2 span {
 #CreateAccount section#Content #LoginWith #Accounts svg {
     height: 5vh;
     width: 2.5vw;
+}
+
+
+/* -------------------------------------------------------------------------------*/
+/* CreateAccount */
+
+#Cart #BackGroundFade {
+    padding-bottom: 25vh;
+}
+
+#Cart section#Grid {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr;
+    justify-content: space-between;
+    gap: 5vw;
+    margin: 10vh 5vw;
+}
+
+#Cart section#Grid>div {
+    padding: 10vh 3.75vw;
+    border-radius: 12.5vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: rgba(7, 7, 7, 50%);
+    box-shadow: 0 1px 4px 0px rgba(255, 255, 255, 0.2) inset, 0 -0.5px 1px 0px rgba(255, 255, 255, 0.1) inset, 0 0 100px 20px rgb(22, 18, 18, 50%);
+}
+
+#Cart section#Grid #Items {
+    gap: 7.5vh;
+}
+
+#Cart section#Grid #Items #Description {
+    display: grid;
+    grid-template-columns: 3fr repeat(2, 1.25fr) 0.75fr;
+    justify-items: end;
+    align-items: center;
+    gap: 2.5vw;
+
+    padding-bottom: 2.5vh;
+    border-bottom: 1px solid rgb(253, 234, 234);
+}
+
+#Cart section#Grid #Items #Description h1 {
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 500;
+    color: rgb(253, 234, 234);
+    text-transform: capitalize;
+}
+
+#Cart section#Grid #Items #Description h1:first-of-type {
+    justify-self: start;
+}
+
+#Cart section#Grid #Items #Products {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+#Cart section#Grid #Items .Product {
+    display: grid;
+    grid-template-columns: 3fr repeat(2, 1.25fr) 0.75fr;
+    justify-items: end;
+    align-items: center;
+    gap: 2.5vw;
+    padding-bottom: 5vh;
+    border-bottom: 1px solid rgba(158, 148, 148, 25%);
+    position: relative;
+}
+
+#Cart section#Grid #Items .Product:last-child {
+    padding: 0;
+    border: none;
+}
+
+#Cart section#Grid #Items .Product>div:first-of-type {
+    justify-self: start;
+}
+
+#Cart section#Grid #Items .Product .Card {
+    display: flex;
+    gap: 2.5vw;
+    align-items: center;
+}
+
+#Cart section#Grid #Items .Product .Card>figure {
+    width: 6.25vw;
+    aspect-ratio: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 2.5vh;
+    background: linear-gradient(0deg, rgb(7, 7, 7, 50%) 0%, rgb(15, 13, 13, 50%) 50%, rgb(22, 18, 18, 50%) 100%);
+    box-shadow: 0 1px 2px 0px rgba(255, 255, 255, 0.2) inset, 0 -0.5px 1px 0px rgba(255, 255, 255, 0.1) inset, 0 0 100px 20px rgb(22, 18, 18, 50%) inset;
+    border-bottom: 1px solid rgba(210, 195, 195, 75%);
+}
+
+#Cart section#Grid #Items .Product img {
+    transform: rotate(32.5deg);
+    height: 8.75vh;
+}
+
+#Cart section#Grid #Items .Product .Text {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+#Cart section#Grid #Items .Product .Text h2 {
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 500;
+}
+
+#Cart section#Grid #Items .Product .Text h3 {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 300;
+}
+
+#Cart section#Grid #Items .Product #Quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+}
+
+#Cart section#Grid #Items .Product #Quantity #QuantitySelector {
+    height: fit-content;
+    width: fit-content;
+
+    border-radius: 5vh;
+    background: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5vw;
+}
+
+#Cart section#Grid #Items .Product #Quantity input[type="number"] {
+    background: none;
+    border: none;
+
+    field-sizing: content;
+    width: auto;
+
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 300;
+    color: rgb(253, 234, 234);
+
+    -moz-appearance: textfield;
+    appearance: textfield;
+
+    transition: 0.1s ease;
+}
+
+#Cart section#Grid #Items .Product #Quantity input[type=number]::-webkit-inner-spin-button,
+#Cart section#Grid #Items .Product #Quantity input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+#Cart section#Grid #Items .Product #Quantity input::-webkit-inner-spin-button,
+#Cart section#Grid #Items .Product #Quantity input::-webkit-outer-spin-button {
+    opacity: 1;
+    background: rgb(10, 9, 9);
+}
+
+#Cart section#Grid #Items .Product #Quantity #UnSelector {
+    display: flex;
+    gap: 0.75vw;
+    align-items: center;
+}
+
+#Cart section#Grid #Items .Product #Quantity #Un {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 300;
+    color: rgb(253, 234, 234);
+
+    pointer-events: none;
+    user-select: none;
+}
+
+#Cart section#Grid #Items .Product #Quantity #Selector {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#Cart section#Grid #Items .Product #Quantity #Selector .QuantityModifier {
+    background: none;
+    border: none;
+    padding: 0;
+
+    height: 15px;
+    width: 10px;
+}
+
+#Cart section#Grid #Items .Product #Quantity #Selector svg {
+    height: 11px;
+    width: 10px;
+}
+
+#Cart section#Grid #Items .Product h2 {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+#Cart section#Grid #Items .Product button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+}
+
+#Cart section#Grid #Items .Product button figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+
+#Cart section#Grid #Items .Product button h3 {
+    padding: 0.75vh 1vw;
+    border-radius: 2.5vh;
+    background: linear-gradient(0deg, rgb(7, 7, 7, 50%) 0%, rgb(15, 13, 13, 50%) 50%, rgb(22, 18, 18, 50%) 100%);
+    box-shadow: 0 1px 2px 0px rgba(255, 255, 255, 0.2) inset, 0 -0.5px 1px 0px rgba(255, 255, 255, 0.1) inset, 0 0 100px 20px rgb(22, 18, 18, 50%) inset;
+
+    position: absolute;
+    white-space: nowrap;
+    left: 125%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    opacity: 0;
+    transition: 0.75s;
+
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 300;
+}
+
+#Cart section#Grid #Items .Product button:hover h3 {
+    opacity: 1;
+}
+
+#Cart section#Grid #Items .Product button:focus figure svg:first-of-type {
+    animation: DeleteAnimationSVG 1s forwards;
+}
+
+@keyframes DeleteAnimationSVG {
+    0% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-15px) rotate(-30deg);
+        transform-origin: bottom left;
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+        transform-origin: bottom left;
+    }
+}
+
+#Cart section#Grid #Items .Product:has(button:focus) {
+    animation: DeleteAnimationProduct 3s forwards 0.75s;
+}
+
+@keyframes DeleteAnimationProduct {
+    0% {
+        transform: translateX(0%);
+    }
+
+    10% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    20% {
+        transform: translateX(-100);
+        opacity: 0;
+        top: -100vh;
+    }
+
+    65% {
+        transform: translateX(-100%);
+        opacity: 0;
+        top: 0;
+    }
+
+    75% {
+        transform: translateX(0%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+#Cart section#Grid #Sumary {
+    display: flex;
+    flex-direction: column;
+    gap: 7.5vh;
+    height: fit-content;
+}
+
+#Cart section#Grid #Sumary h1 {
+    font-size: 48px;
+    line-height: 48px;
+    text-transform: capitalize;
+    color: rgb(253, 234, 234);
+}
+
+#Cart section#Grid #Sumary #Discount {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr;
+    gap: 0.5vw;
+}
+
+#Cart section#Grid #Sumary .Input {
+    position: relative;
+}
+
+#Cart section#Grid #Sumary label {
+    position: absolute;
+    left: calc(0.25vw + 15px);
+    transform: translateY(1vh);
+
+    pointer-events: none;
+    user-select: none;
+
+    animation: 0.5s;
+    background-color: rgba(7, 7, 7, 0%);
+    width: fit-content;
+    padding: 0.6vh 0.75vw;
+    border-radius: 2vh;
+
+    font-size: 12px;
+    font-weight: 300;
+    color: rgb(158, 148, 148);
+
+    pointer-events: none;
+
+    transition: 0.5s;
+}
+
+#Cart section#Grid #Sumary input {
+    color: rgb(253, 234, 234);
+    font-size: 15px;
+
+    position: relative;
+
+    background: none;
+    border: none;
+    border-bottom: rgb(253, 234, 234) solid 1px;
+
+    height: 6vh;
+    width: 100%;
+    padding: 20px 15px;
+
+    resize: none;
+    overflow: visible;
+
+    animation: 0.5s;
+}
+
+#Cart section#Grid #Sumary input:not(:placeholder-shown):not(:focus),
+#Cart section#Grid #Sumary input:focus {
+    border-radius: 0;
+    outline: none;
+}
+
+#Cart section#Grid #Sumary input:focus+label,
+#Cart section#Grid #Sumary input:not(:placeholder-shown):not(:focus)~label {
+    color: rgb(253, 234, 234);
+    background-color: rgb(13, 12, 12);
+    opacity: 1;
+    transform: translateY(-55%);
+}
+
+#Cart section#Grid #Sumary #Discount button {
+    margin: 5% 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5vh;
+    border: 1px solid rgb(253, 234, 234);
+
+    background: none;
+}
+
+#Cart section#Grid #Sumary #Discount button h3 {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+#Cart section#Grid #Sumary #Price {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vh;
+}
+
+#Cart section#Grid #Sumary #Price>* {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#Cart section#Grid #Sumary #Price h1 {
+    font-size: 36px;
+    line-height: 36px;
+}
+
+#Cart section#Grid #Sumary #Price h2 {
+    font-size: 24px;
+    line-height: 24px;
+}
+
+#Cart section#Grid #Sumary #Price h3 {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 300;
+    color: rgba(210, 195, 195, 50%);
+}
+
+#Cart section#Grid #Sumary #Price h2:last-of-type {
+    padding-bottom: 2.5vh;
+    margin-bottom: 2.5vh;
+    border-bottom: 1px solid rgba(210, 195, 195, 75%);
+}
+
+#Cart section#Grid #Sumary #Price .Description {
+    font-weight: 500;
+}
+
+#Cart section#Grid #Sumary #Price .Value {
+    font-weight: 300;
+    color: rgba(210, 195, 195, 75%);
+}
+
+#Cart section#Grid #Sumary>button {
+    width: fit-content;
+    height: fit-content;
+
+    padding: 2.5vh 2.5vw;
+
+    border-radius: 5vh;
+    border: none;
+
+    line-height: 12px;
+
+    background: linear-gradient(45deg, rgb(109, 8, 21) 0%, rgb(219, 25, 51) 75%, rgb(250, 58, 83) 100%);
 }
